@@ -19,5 +19,6 @@ from myBlog import views as myblog_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',myblog_views.index),
+    path('', myblog_views.index),
+    path('add/', myblog_views.add, name='add'),
 ]
