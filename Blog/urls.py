@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from myBlog import views as myblog_views
+from django.urls import re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', myblog_views.index),
     path('add/', myblog_views.add, name='add'),
-    path('add/<int:a>/<int:b>/', myblog_views.add2, name='add2'),
+    path('new_add/<int:a>/<int:b>/', myblog_views.add2, name='add2'),
+    path('home/', myblog_views.index2, name='home'),
+    re_path(r'add/(\d+)/(\d+)/', myblog_views.redirect),
 ]
