@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', myblog_views.index),
     path('add/', myblog_views.add, name='add'),
+    path('add/<int:a>/<int:b>/', myblog_views.add2, name='add2'),
 ]
